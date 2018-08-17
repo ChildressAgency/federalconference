@@ -51,7 +51,7 @@
             <div class="embed-responsive embed-responsive-16by9">
               <?php if(get_field('hero_video')):
                 $hero_video = get_field('hero_video');
-                $hero_video = str_replace('></iframe>', ' class="embed-responsive-item"></iframe>', $hero_video);
+                //$hero_video = str_replace('></iframe>', ' class="embed-responsive-item"></iframe>', $hero_video);
                 echo $hero_video;
               else: ?>
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/video-placeholder.png" class="img-responsive center-block" alt="" />
