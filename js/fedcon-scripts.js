@@ -1,0 +1,18 @@
+jQuery(document).ready(function($){
+  $('#hero-carousel').on('slide.bs.carousel', function(slide){
+    var oldSlideIndex = slide.from;
+    var newSlideIndex = slide.to;
+
+    var oldTitleId = '#slide-title-' + oldSlideIndex;
+    var newTitleId = '#slide-title-' + newSlideIndex;
+
+    var animationEndEvent = 'webkitAnimationEnd animationend';
+
+    $(oldTitleId).removeClass('slideInRight').addClass('slideOutLeft').one(animationEndEvent, function(){
+      $(oldTitleId).removeClass('slideOutLeft title-show');
+      $(newTitleId).addClass('slideInRight title-show').one(animationEndEvent, function(){
+        $(newTitleId).removeClass('slideInRight');
+      });
+    });
+  });
+});
