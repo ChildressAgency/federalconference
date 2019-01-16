@@ -17,6 +17,13 @@ jQuery(document).ready(function($){
       });
     });
   });
+
+  $('#testimonial-slider').on('slid.bs.carousel', function(slide){
+    var slidesCount = $('#testimonial-slider .carousel-item').length;
+    var currentSlide = slide.to + 1;
+
+    $('.slide-counter').text(currentSlide + ' / ' + slidesCount);
+  });
 });
 
 $.fn.carouselHeights = function () {

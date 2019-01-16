@@ -7,10 +7,30 @@
 
 body{
   font-family:"Open Sans", sans-serif;
+  color:#000;
 }
 
 a,input{
   transition:all .3s ease;
+}
+
+h3{
+  font-size:22px;
+  font-weight:700;
+}
+
+.btn-main{
+  display:inline-block;
+  font-size:26px;
+  color:#fff;
+  background-color:#8dc63f;
+  padding:5px 40px;
+}
+.btn-main:hover,
+.btn-main:focus{
+  text-decoration:none;
+  color:#fff;
+  background-color:#005f94;
 }
 
 #header{
@@ -118,6 +138,13 @@ a,input{
   margin-right:15px;
 }
 
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.7.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2018 Daniel Eden
+ */
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -129,61 +156,351 @@ a,input{
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-
   to {
     visibility: hidden;
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
 }
-
 @keyframes slideOutLeft {
   from {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-
   to {
     visibility: hidden;
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
 }
-
 .slideOutLeft {
   -webkit-animation-name: slideOutLeft;
   animation-name: slideOutLeft;
 }
-
 @-webkit-keyframes slideInRight {
   from {
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
     visibility: visible;
   }
-
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
-
 @keyframes slideInRight {
   from {
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
     visibility: visible;
   }
-
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
-
 .slideInRight {
   -webkit-animation-name: slideInRight;
   animation-name: slideInRight;
+}
+
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform:rotate3d(0, 1, 0, -360deg);
+    transform:rotate3d(0, 1, 0, -360deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 1, 0, -190deg);
+    transform:rotate3d(0, 1, 0, -190deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform:rotate3d(0, 1, 0, -170deg);
+    transform:rotate3d(0, 1, 0, -170deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform:rotate3d(0, 1, 0, 0deg);
+    transform: rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    -webkit-transform:rotate3d(0, 1, 0, 0deg);
+    transform:rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes flip {
+  from {
+    -webkit-transform:rotate3d(0, 1, 0, -360deg);
+    transform:rotate3d(0, 1, 0, -360deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform:rotate3d(0, 1, 0, -190deg);
+    transform:rotate3d(0, 1, 0, -190deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform:rotate3d(0, 1, 0, -170deg);
+    transform: rotate3d(0, 1, 0, -170deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform:rotate3d(0, 1, 0, 0deg);
+    transform: rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    -webkit-transform:rotate3d(0, 1, 0, 0deg);
+    transform: rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+
+.animated.spin{
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+.service-icon:hover .animated.spin {
+  -webkit-animation-name: flip;
+  animation-name: flip;
+}
+/* end animate.css */
+
+.article-header{
+  font-size:40px;
+  font-weight:700;
+  color:#8dc63f;
+  padding-bottom:15px;
+  margin-bottom:15px;
+  border-bottom:2px solid #fff;
+}
+.article-header>small{
+  font-size:26px;
+  display:block;
+  color:#c1dc83;
+}
+.article-body{
+  font-size:20px;
+  line-height:1.2em;
+}
+.article-header.white-bg{
+  border-color:#000;
+}
+.article-header.white-bg>small{
+  color:#005f94;
+}
+
+#solutions{
+  background-image:url(images/color-bars-gray-bg.jpg);
+  background-position:right top;
+  background-size:cover;
+  background-color:#778288;
+  position:relative;
+  padding-top:40px;
+  padding-bottom:40px;
+  min-height:415px;
+}
+#solutions article{
+  z-index:3;
+  position:relative;
+}
+#solutions>img{
+  position:absolute;
+  bottom:0;
+  right:0;
+  z-index:1;
+  max-width:50%;
+}
+
+#services{
+  padding-top:80px;
+  padding-bottom:80px;
+}
+.service-icon{
+  text-align:center;
+  margin-bottom:40px;
+}
+.service-icon svg{
+  height:130px;
+  width:auto;
+}
+.service-icon svg>*{
+  fill:#778288;
+  transition:all .3s ease;
+}
+.service-icon:hover svg>*,
+.service-icon:focus svg>*{
+  fill:#8dc63f;
+}
+.service-icon h3{
+  font-size:20px;
+  color:#778288;
+  transition:color .3s ease;
+  margin-top:15px;
+}
+.service-icon:hover h3,
+.service-icon:focus h3{
+  color:#000;
+}
+
+#hp-video{
+  background-color:#778288;
+  padding-top:60px;
+  padding-bottom:40px;
+}
+
+#start{
+  background-repeat:no-repeat;
+  background-size:cover;
+  color:#fff;
+  padding-top:20%;
+  padding-bottom:80px;
+  position:relative;
+}
+.content-center{
+  position:relative;
+  z-index:3;
+}
+.content-center .btn-main{
+  margin-top:40px;
+}
+#start h2{
+  font-size:70px;
+  font-weight:700;
+  font-style:italic;
+}
+.light-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  z-index:1;
+  background-color:rgba(0,0,0,.3);
+}
+.top-stripes{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:auto;
+  z-index:3;
+}
+
+#testimonials{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#testimonials .article-header{
+  border:none;
+}
+#testimonial-slider .carousel-item{
+  color:#011e4f;
+}
+#testimonial-slider .carousel-item p{
+  font-size:40px;
+  font-weight:700;
+  line-height:1.2em;
+}
+#testimonial-slider .carousel-item cite{
+  display:block;
+  text-align:right;
+  font-size:26px;
+  padding-right:15px;
+}
+#testimonial-slider .carousel-control-prev,
+#testimonial-slider .carousel-control-next{
+  background-color:#8dc63f;
+  border-radius:50%;
+  height:30px;
+  width:30px;
+  bottom:0;
+  top:auto;
+}
+#testimonial-slider .carousel-control-next{
+  right:auto;
+  left:45px;
+}
+#testimonial-slider .carousel-control-next-icon,
+#testimonial-slider .carousel-control-prev-icon{
+  background-image:none;
+  font-size:32px;
+  line-height:1em;
+  margin-bottom:12px;
+  margin-left:3px;
+  font-weight:700;
+}
+#testimonial-slider .carousel-control-prev-icon{
+  margin-left:-2px;
+}
+#testimonial-slider .slide-counter{
+  display:block;
+  margin-left:95px;
+}
+
+.no-gutter{
+  padding-left:0;
+  padding-right:0;
+}
+
+.img-link{
+  height:320px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  text-align:center;
+  position:relative;
+}
+.img-link:hover,
+.img-link:focus{
+  color:#fff;
+  text-decoration:none;
+}
+.img-link h3{
+  font-size:32px;
+  color:#fff;
+  font-weight:400;
+  text-align:center;
+  position:relative;
+  z-index:3;
+}
+.img-link-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  background-color:rgba(141,198,63,.7);
+  z-index:1;
+}
+.img-link .hover-content{
+  opacity:0;
+  transition:all .3s ease;
+}
+.img-link:hover .hover-content,
+.img-link:focus .hover-content{
+  opacity:1;
 }
 
 
@@ -197,5 +514,19 @@ a,input{
   #logo-nav .navbar-brand>img{
     max-width:100%;
     height:auto;
+  }
+}
+@media (max-width:767px){
+  #solutions{
+    background-position:center center;
+  }
+  #solutions>img{
+    display:none;
+  }
+}
+@media (min-width:768px){
+  .article-body ul{
+    column-count:2;
+    column-gap:40px;
   }
 }
