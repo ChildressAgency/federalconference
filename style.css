@@ -19,6 +19,32 @@ h3{
   font-weight:700;
 }
 
+img.alignnone{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+img.aligncenter{
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin:25px auto;
+}
+img.alignright{
+  display:block;
+  max-width:100%;
+  height:auto;
+  float:right;
+  margin:25px 0px 25px 25px;
+}
+img.alignleft{
+  display:block;
+  max-width:100%;
+  height:auto;
+  float:left;
+  margin:25px 25px 25px 0px;
+}
+
 .btn-main{
   display:inline-block;
   font-size:26px;
@@ -623,6 +649,7 @@ h3{
   padding-bottom:40px;
 }
 .team-member{
+  display:block;
   width:235px;
   height:310px;
   position:relative;
