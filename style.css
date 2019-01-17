@@ -26,11 +26,18 @@ h3{
   background-color:#8dc63f;
   padding:5px 40px;
 }
+.btn-main.btn-alt{
+  background-color:#004e7f;
+}
 .btn-main:hover,
 .btn-main:focus{
   text-decoration:none;
   color:#fff;
   background-color:#005f94;
+}
+.btn-main.btn-alt:hover,
+.btn-main.btn-alt:focus{
+  background-color:#011e4f;
 }
 
 #header{
@@ -101,12 +108,29 @@ h3{
   color:#fff;
 }
 
+.hero{
+  position:relative;
+  height:300px;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.hero-caption{
+  z-index:3;
+  padding:0px 15px;
+  position:relative;
+}
+.hero-caption h1{
+  font-size:70px;
+  font-weight:700;
+  color:#8dc63f;
+  margin:0;
+}
 #hero-carousel .carousel-item{
   height:610px;
   background-repeat:no-repeat;
   background-size:cover;
 }
-#hero-carousel .slide-overlay{
+.dark-overlay{
   position:absolute;
   top:0;
   left:0;
@@ -314,7 +338,7 @@ h3{
   display:block;
   color:#c1dc83;
 }
-.article-body{
+.article-body p{
   font-size:20px;
   line-height:1.2em;
 }
@@ -420,6 +444,14 @@ h3{
 .top-stripes{
   position:absolute;
   top:0;
+  left:0;
+  width:100%;
+  height:auto;
+  z-index:3;
+}
+.bottom-stripes{
+  position:absolute;
+  bottom:0;
   left:0;
   width:100%;
   height:auto;
@@ -549,6 +581,79 @@ h3{
   color:#004e7f;
   font-weight:700;
   padding-top:15px;
+}
+
+#government-events{
+  position:relative;
+  background-repeat:no-repeat;
+  background-size:cover;
+  padding-top:40px;
+  padding-bottom:60px;
+}
+#government-events h2{
+  color:#fff;
+  font-size:40px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+#government-events p{
+  color:#fff;
+  font-size:26px;
+  line-height:1.2em;
+}
+
+#different{
+  background-color:#8dc63f;
+  padding-top:40px;
+  padding-bottom:12%;
+  position:relative;
+}
+#different .article-header,
+#different .article-header>small{
+  color:#fff;
+}
+
+#history-awards{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+
+#team{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+.team-member{
+  width:235px;
+  height:310px;
+  position:relative;
+  margin:0px auto 25px;
+}
+.team-member-hover{
+  position:absolute;
+  background-color:rgba(0,0,0,.6);
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  opacity:0;
+  transition:opacity .3s ease;
+}
+.team-member-caption{
+  position:absolute;
+  text-align:center;
+  width:100%;
+  bottom:25px;
+  color:#fff;
+}
+.team-member-caption h4{
+  font-size:20px;
+  font-weight:700;
+}
+.team-member-caption h5{
+  font-size:16px;
+}
+.team-member-hover:hover{
+  opacity:1;
 }
 
 #footer-contact-nav{
