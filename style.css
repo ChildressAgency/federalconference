@@ -382,6 +382,7 @@ h3{
 .content-center{
   position:relative;
   z-index:3;
+  width:75%;
 }
 .content-center .btn-main{
   margin-top:40px;
@@ -390,6 +391,9 @@ h3{
   font-size:70px;
   font-weight:700;
   font-style:italic;
+}
+#start p{
+  font-size:26px;
 }
 .light-overlay{
   position:absolute;
@@ -503,6 +507,102 @@ h3{
   opacity:1;
 }
 
+#join-us{
+  background-color:#011e4f;
+  padding-top:11%;
+  padding-bottom:40px;
+  color:#fff;
+  position:relative;
+}
+#join-us h2{
+  font-size:40px;
+  font-weight:700;
+}
+#join-us p{
+  font-size:26px;
+  line-height:1.2em;
+}
+
+#history{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#history .list-inline-item{
+  margin-bottom:25px;
+}
+#history .list-inline-item a{
+  display:block;
+  font-size:20px;
+  color:#004e7f;
+  font-weight:700;
+  padding-top:15px;
+}
+
+#footer-contact-nav{
+  background-color:#005f94;
+  padding-top:40px;
+  padding-bottom:60px;
+  color:#fff;
+}
+#logo-contact-info p{
+  margin-bottom:5px;
+}
+#logo-contact-info a{
+  color:#fff;
+}
+#logo-contact-info .contact-info ul>li{
+  position:relative;
+  margin-right:1em;
+}
+#logo-contact-info .contact-info ul>li+li::before{
+  content:"\2022";
+  position:absolute;
+  left:-13px;
+}
+#footer-nav{
+  margin-top:20px;
+}
+#footer-nav .navbar-nav{
+  border-bottom:2px solid #6aad54;
+  padding-bottom:15px;
+}
+#footer-nav .navbar-nav a:hover,
+#footer-nav .navbar-nav a:focus{
+  text-decoration:underline;
+  color:#fff;
+}
+.copyright{
+  margin-top:20px;
+  font-size:12px;
+}
+.nav-copyright a{
+  color:#fff;
+}
+.copyright .list-inline>li+li{
+  box-shadow:-1px 0px 0px #fff;
+  padding-left:7px;
+}
+
+#footer-social{
+  background-color:#011e4f;
+}
+#footer-social h4{
+  font-size:20px;
+  color:#d5d7d8;
+  margin-bottom:40px;
+}
+#footer-social .social>a{
+  color:#fff;
+  font-size:40px;
+}
+#footer-social .social>a:hover,
+#footer-social .social>a:focus{
+  color:#005f94;
+}
+#footer-social .social>a+a{
+  margin-left:10px;
+}
+
 
 @media (max-width:575px){
   .navbar-toggler{
@@ -515,6 +615,15 @@ h3{
     max-width:100%;
     height:auto;
   }
+  #logo-contact-info img{
+    display:block;
+    margin:0px auto 15px;
+  }
+  .content-center{
+    width:100%;
+    padding-left:15px;
+    padding-right:15px;
+  }
 }
 @media (max-width:767px){
   #solutions{
@@ -522,6 +631,10 @@ h3{
   }
   #solutions>img{
     display:none;
+  }
+  #footer-social{
+    padding-top:40px;
+    padding-bottom:40px;
   }
 }
 @media (min-width:768px){
