@@ -79,12 +79,25 @@ h3{
   color:#fff;
 }
 #navbar .navbar-nav>li>a:hover,
-#navbar .navbar-nav>li>a:focus{
+#navbar .navbar-nav>li>a:focus,
+#navbar .navbar-nav>li.active>a{
   color:#8dc63f;
   background-color:transparent;
 }
 .navbar-toggler{
   border-color:#fff;
+  color:#fff;
+}
+.dropdown-menu{
+  background-color:#8dc63f;
+  border-radius:0;
+}
+.dropdown-item{
+  color:#004e7f;
+}
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background-color:transparent;
   color:#fff;
 }
 
