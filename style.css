@@ -13,6 +13,14 @@ body{
 a,input{
   transition:all .3s ease;
 }
+p>a:not(.btn-main){
+  font-weight:700;
+  color:inherit;
+}
+p>a:hover,
+p>a:focus{
+  color:#000;
+}
 
 h3{
   font-size:22px;
@@ -693,6 +701,76 @@ img.alignleft{
   padding-bottom:40px;
 }
 
+#careers-intro{
+  background-color:#8dc63f;
+  padding-top:40px;
+  padding-bottom:12%;
+  position:relative;
+}
+#careers-intro .article-header{
+  color:#fff;
+}
+#careers-intro .article-header>small{
+  color:#fff;
+}
+
+#company-culture{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#company-culture .article-header{
+  color:#004e7f;
+}
+#company-culture .article-header>small{
+  color:#8dc63f;
+}
+
+#benefits{
+  background-color:#e2e3e4;
+  padding:25px;
+}
+
+#openings{
+  background-repeat:no-repeat;
+  background-size:cover;
+  position:relative;
+  height:55%;
+}
+#openings h2{
+  font-size:40px;
+  color:#8dc63f;
+  font-weight:700;
+}
+#openings p{
+  color:#fff;
+  font-size:18px;
+}
+
+#eoe{
+  background-color:#011e4f;
+  color:#fff;
+  padding:40px 15px 15px;
+  height:45%;
+}
+.eoe-inner{
+  max-width:510px;
+}
+#eoe h3{
+  font-size:26px;
+  font-weight:400;
+  color:#8dc63f;
+}
+
+#apply{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#apply h2{
+  font-size:40px;
+  font-weight:700;
+  color:#004e7f
+}
+
 #footer-contact-nav{
   background-color:#005f94;
   padding-top:40px;
@@ -790,6 +868,11 @@ img.alignleft{
   #footer-social{
     padding-top:40px;
     padding-bottom:40px;
+  }
+  #openings,
+  #eoe{
+    height:auto;
+    padding:40px 15px 40px;
   }
 }
 @media (min-width:768px){
