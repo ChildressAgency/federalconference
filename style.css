@@ -673,8 +673,9 @@ img.alignleft{
   position:absolute;
   text-align:center;
   width:100%;
-  bottom:25px;
+  bottom:0px;
   color:#fff;
+  background-color:rgba(0,0,0,.6);
 }
 .team-member-caption h4{
   font-size:20px;

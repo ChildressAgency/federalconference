@@ -24,6 +24,18 @@ jQuery(document).ready(function($){
 
     $('.slide-counter').text(currentSlide + ' / ' + slidesCount);
   });
+
+  $('#team-modal').on('show.bs.modal', function(event){
+    var $teamMember = $(event.relatedTarget);
+    var teamMemberName = $teamMember.data('member_name');
+    var teamMemberPosition = $teamMember.data('member_position');
+    var teamMemberBio = $teamMember.data('member_bio');
+
+    var $modal = $(this);
+    $modal.find('#team-member-name').text(teamMemberName);
+    $modal.find('#team-member-position').text(teamMemberPosition);
+    $modal.find('#team-member-bio').html(teamMemberBio);
+  });
 });
 
 $.fn.carouselHeights = function () {
