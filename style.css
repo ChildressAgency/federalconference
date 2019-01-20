@@ -31,6 +31,7 @@ img.alignnone{
   display:block;
   max-width:100%;
   height:auto;
+  margin:25px auto;
 }
 img.aligncenter{
   display:block;
@@ -858,6 +859,33 @@ img.alignleft{
 }
 #expertise-links .article-header>small{
   color:#8dc63f;
+}
+
+#sidebar-nav{
+  padding-top:40px;
+}
+#sidebar-nav ul.nav>li{
+  text-align:right;
+}
+#sidebar-nav ul.nav>li>a{
+  font-size:26px;
+  color:#005f94;
+}
+#sidebar-nav ul.nav>li.active>a{
+  font-weight:700;
+}
+#sidebar-nav ul.nav>li>a:hover,
+#sidebar-nav ul.nav>li>a:focus{
+  color:#8dc63f;
+}
+
+.blog-article h2{
+  font-size:24px;
+  font-weight:700;
+}
+.blog-article h3{
+  font-size:20px;
+  font-weight:700;
 }
 
 #footer-contact-nav{
