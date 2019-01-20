@@ -413,6 +413,11 @@ img.alignleft{
 .service-icon{
   text-align:center;
   margin-bottom:40px;
+  display:block;
+}
+.service-icon:hover,
+.service-icon:focus{
+  text-decoration:none;
 }
 .service-icon svg{
   height:130px;
@@ -834,6 +839,25 @@ img.alignleft{
   padding-top:8%;
   margin-top:-75px;
   height:530px;
+}
+
+#expertise-intro{
+  position:relative;
+  padding-top:40px;
+  padding-bottom:12%;
+  background-color:#8dc63f;
+}
+
+#expertise-links{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#expertise-links .article-header{
+  border:none;
+  margin-bottom:40px;
+}
+#expertise-links .article-header>small{
+  color:#8dc63f;
 }
 
 #footer-contact-nav{
