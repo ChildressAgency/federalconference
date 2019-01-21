@@ -126,13 +126,41 @@ require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
 function fedcon_header_fallback_menu(){ ?>
   <div id="navbar" class="collapse navbar-collapse justify-content-end">
   <ul class="navbar-nav">
-    <li class="nav-item<?php if(is_page('about')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('about')); ?>" class="nav-link"><?php _e('About', 'fedcon'); ?></a></li>
-    <li class="nav-item<?php if(is_page('our-expertise') || is_page_template('expertise.php')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('our-expertise')); ?>" class="nav-link"><?php _e('Our Expertise', 'fedcon'); ?></a></li>
-    <li class="nav-item<?php if(is_page('your-event') || is_page_template('your-event.php')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('your-event')); ?>" class="nav-link"><?php _e('Your Event', 'fedcon'); ?></a></li>
-    <li class="nav-item<?php if(is_page('news-media') || is_single('post')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('news-media')); ?>" class="nav-link"><?php _e('News/Media', 'fedcon'); ?></a></li>
-    <li class="nav-item<?php if(is_page('government')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('government')); ?>" class="nav-link"><?php _e('Government', 'fedcon'); ?></a></li>
-    <li class="nav-item<?php if(is_page('careers')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('careers')); ?>" class="nav-link"><?php _e('Careers', 'fedcon'); ?></a></li>
-    <li class="nav-item<?php if(is_page('contact-us')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('contact-us')); ?>" class="nav-link"><?php _e('Contact Us', 'fedcon'); ?></a></li>
+    <li class="nav-item<?php if(is_page('about')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('about')); ?>" class="nav-link"><?php esc_html_e('About', 'fedcon'); ?></a></li>
+    <li class="nav-item<?php if(is_page('our-expertise') || is_page_template('expertise.php')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('our-expertise')); ?>" class="nav-link"><?php esc_html_e('Our Expertise', 'fedcon'); ?></a></li>
+    <li class="nav-item<?php if(is_page('your-event') || is_page_template('your-event.php')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('your-event')); ?>" class="nav-link"><?php esc_html_e('Your Event', 'fedcon'); ?></a></li>
+    <li class="nav-item<?php if(is_page('news-media') || is_single('post')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('news-media')); ?>" class="nav-link"><?php esc_html_e('News/Media', 'fedcon'); ?></a></li>
+    <li class="nav-item<?php if(is_page('government')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('government')); ?>" class="nav-link"><?php esc_html_e('Government', 'fedcon'); ?></a></li>
+    <li class="nav-item<?php if(is_page('careers')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('careers')); ?>" class="nav-link"><?php esc_html_e('Careers', 'fedcon'); ?></a></li>
+    <li class="nav-item<?php if(is_page('contact-us')){ echo ' active'; } ?>"><a href="<?php echo esc_url(home_url('contact-us')); ?>" class="nav-link"><?php esc_html_e('Contact Us', 'fedcon'); ?></a></li>
   </ul>
 </div>
+<?php }
+
+function fedcon_footer_fallback_menu(){ ?>
+  <nav id="footer-nav" class="d-flex justify-content-center navbar-expand">
+    <ul class="navbar-nav flex-row flex-wrap justify-content-center">
+      <li class="nav-item">
+        <a href="<?php echo esc_url(home_url('about')); ?>" class="nav-link"><?php esc_html_e('About', 'fedcon'); ?></a>
+      </li>
+      <li class="nav-item">
+        <a href="<?php echo esc_url(home_url('our-expertise')); ?>" class="nav-link"><?php esc_html_e('Our Expertise', 'fedcon'); ?></a>
+      </li>
+      <li class="nav-item">
+        <a href="<?php echo esc_url(home_url('your-event')); ?>" class="nav-link"><?php esc_html_e('Your Event', 'fedcon'); ?></a>
+      </li>
+      <li class="nav-item">
+        <a href="<?php echo esc_url(home_url('news-media')); ?>" class="nav-link"><?php esc_html_e('News/Media', 'fedcon'); ?></a>
+      </li>
+      <li class="nav-item">
+        <a href="<?php echo esc_url(home_url('government')); ?>" class="nav-link"><?php esc_html_e('Government', 'fedcon'); ?></a>
+      </li>
+      <li class="nav-item">
+        <a href="<?php echo esc_url(home_url('careers')); ?>" class="nav-link"><?php esc_html_e('Careers', 'fedcon'); ?></a>
+      </li>
+      <li class="nav-item">
+        <a href="<?php echo esc_url(home_url('contact-us')); ?>" class="nav-link"><?php esc_html_e('Contact Us', 'fedcon'); ?></a>
+      </li>
+    </ul>
+  </nav>
 <?php }
