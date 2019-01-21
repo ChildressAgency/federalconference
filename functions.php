@@ -110,6 +110,7 @@ function fedcon_add_css_meta($link, $handle){
 add_action('after_set_theme', 'fedcon_setup');
 function fedcon_setup(){
   add_theme_support('post-thumbnails');
+  set_post_thumbnail_size(320, 320);
 
   register_nav_menus(array(
     'header-nav' => 'Header Navigation',
@@ -167,4 +168,46 @@ function fedcon_footer_fallback_menu(){ ?>
 
 function fedcon_article_section($section_name){
   include(locate_template('includes/article-section.php', false, false));
+}
+
+function fedcon_esc_svg($svg){
+  $kses_defaults = wp_kses_allowed_html('post');
+
+  $svg_args = array(
+    'svg' => array(
+      'class' => true,
+      'id' => true,
+      'xmlns' => true,
+      'viewbox' => true,
+      'width' => true,
+      'height' => true
+    ),
+    'defs' => array(),
+    'title' => array(),
+    'g' => array(
+      'id' => true
+    ),
+    'path' => array(
+      'class' => true,
+      'd' => true,
+      'fill' => true
+    ),
+    'rect' => array(
+      'class' => true,
+      'x' => true,
+      'y' => true,
+      'width' => true,
+      'height' => true,
+      'transform' => true,
+      'fill' => true
+    ),
+    'polygon' => array(
+      'class' => true,
+      'points' => true,
+      'fill' => true
+    )
+  );
+
+  $allowed_tags = array_merge($kses_defaults, $svg_args);
+  echo wp_kses($svg, $allowed_tags);
 }
