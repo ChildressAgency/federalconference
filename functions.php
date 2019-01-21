@@ -225,3 +225,12 @@ function fedcon_esc_svg($svg){
   $allowed_tags = array_merge($kses_defaults, $svg_args);
   echo wp_kses($svg, $allowed_tags);
 }
+
+function fedcon_go_back_button(){
+  $previous = 'javascript:history.go(-1)';
+  if(isset($_SERVER['HTTP_REFERER'])){
+    $previous = esc_url($_SERVER['HTTP_REFERER']);
+  }
+
+  echo '<a href="' . $previous . '" class="btn-main">Back</a>';
+}
