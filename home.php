@@ -13,7 +13,7 @@
             <a href="#" class="btn-main load-more">Load More</a>
           </div>
         <?php else: ?>
-          <p><?php _e('Sorry, nothing was found.', 'fedcon'); ?></p>
+          <p><?php esc_html_e('Sorry, nothing was found.', 'fedcon'); ?></p>
         <?php endif; ?>
       </div>
     </main>
