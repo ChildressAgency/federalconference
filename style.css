@@ -27,6 +27,11 @@ h3{
   font-weight:700;
 }
 
+section{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+
 img.alignnone{
   display:block;
   max-width:100%;
@@ -75,6 +80,50 @@ img.alignleft{
 .btn-main.btn-alt:focus{
   background-color:#011e4f;
 }
+
+.fedcon-white{
+  color:#fff;
+}
+.fedcon-green{
+  color:#8dc63f;
+}
+.fedcon-light-green{
+  color:#c1dc83;
+}
+.fedcon-blue{
+  color:#011e4f;
+}
+.fedcon-light-blue{
+  color:#005f94;
+}
+
+.title-border-none{
+  border:none !important;
+}
+.title-border-white{
+  border-color:#fff;
+}
+.title-border-black{
+  border-color:#000;
+}
+
+.article-header{
+  font-size:40px;
+  font-weight:700;
+  padding-bottom:15px;
+  margin-bottom:15px;
+  border-bottom-width:2px;
+  border-bottom-style:solid;
+}
+.article-header>small{
+  font-size:26px;
+  display:block;
+}
+.article-body p{
+  font-size:20px;
+  line-height:1.2em;
+}
+
 
 #header{
   background-color:#011e4f;
@@ -149,6 +198,12 @@ img.alignleft{
   height:300px;
   background-repeat:no-repeat;
   background-size:cover;
+  padding-top:0;
+  padding-bottom:0;
+}
+#hp-hero{
+  padding-top:0;
+  padding-bottom:0;
 }
 .hero-caption{
   z-index:3;
@@ -361,29 +416,6 @@ img.alignleft{
 }
 /* end animate.css */
 
-.article-header{
-  font-size:40px;
-  font-weight:700;
-  color:#8dc63f;
-  padding-bottom:15px;
-  margin-bottom:15px;
-  border-bottom:2px solid #fff;
-}
-.article-header>small{
-  font-size:26px;
-  display:block;
-  color:#c1dc83;
-}
-.article-body p{
-  font-size:20px;
-  line-height:1.2em;
-}
-.article-header.white-bg{
-  border-color:#000;
-}
-.article-header.white-bg>small{
-  color:#005f94;
-}
 
 #solutions{
   background-image:url(images/color-bars-gray-bg.jpg);
@@ -391,8 +423,6 @@ img.alignleft{
   background-size:cover;
   background-color:#778288;
   position:relative;
-  padding-top:40px;
-  padding-bottom:40px;
   min-height:415px;
 }
 #solutions article{
@@ -499,13 +529,6 @@ img.alignleft{
   z-index:3;
 }
 
-#testimonials{
-  padding-top:40px;
-  padding-bottom:40px;
-}
-#testimonials .article-header{
-  border:none;
-}
 #testimonial-slider .carousel-item{
   color:#011e4f;
 }
@@ -548,6 +571,11 @@ img.alignleft{
 #testimonial-slider .slide-counter{
   display:block;
   margin-left:95px;
+}
+
+#past-projects{
+  padding-top:0;
+  padding-bottom:0;
 }
 
 .no-gutter{
@@ -613,10 +641,6 @@ img.alignleft{
   line-height:1.2em;
 }
 
-#history{
-  padding-top:40px;
-  padding-bottom:40px;
-}
 #history .list-inline-item{
   margin-bottom:25px;
 }
@@ -653,20 +677,7 @@ img.alignleft{
   padding-bottom:12%;
   position:relative;
 }
-#different .article-header,
-#different .article-header>small{
-  color:#fff;
-}
 
-#history-awards{
-  padding-top:40px;
-  padding-bottom:40px;
-}
-
-#team{
-  padding-top:40px;
-  padding-bottom:40px;
-}
 .team-member{
   display:block;
   width:235px;
@@ -714,24 +725,11 @@ img.alignleft{
   padding-bottom:12%;
   position:relative;
 }
-#careers-intro .article-header{
-  color:#fff;
-}
-#careers-intro .article-header>small{
-  color:#fff;
-}
 
-#company-culture{
-  padding-top:40px;
-  padding-bottom:40px;
+#benefits-openings-eoe{
+  padding-top:0;
+  padding-bottom:0;
 }
-#company-culture .article-header{
-  color:#004e7f;
-}
-#company-culture .article-header>small{
-  color:#8dc63f;
-}
-
 #benefits{
   background-color:#e2e3e4;
   padding:25px;
@@ -768,16 +766,16 @@ img.alignleft{
   color:#8dc63f;
 }
 
-#apply{
-  padding-top:40px;
-  padding-bottom:40px;
-}
 #apply h2{
   font-size:40px;
   font-weight:700;
   color:#004e7f
 }
 
+#contact{
+  padding-top:0;
+  padding-bottom:0;
+}
 #contact-info{
   padding:40px 15px;
   max-width:535px;
@@ -838,6 +836,7 @@ img.alignleft{
 #google-map{
   position:relative;
   padding-top:8%;
+  padding-bottom:0;
   margin-top:-75px;
   height:530px;
 }
@@ -849,17 +848,10 @@ img.alignleft{
   background-color:#8dc63f;
 }
 
-#expertise-links{
-  padding-top:40px;
-  padding-bottom:40px;
-}
 #expertise-links .article-header{
-  border:none;
   margin-bottom:40px;
 }
-#expertise-links .article-header>small{
-  color:#8dc63f;
-}
+
 
 #sidebar-nav{
   padding-top:40px;
