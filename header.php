@@ -72,37 +72,56 @@
 
   <?php if(is_front_page()): ?>
     <section id="hp-hero" class="hp-hero">
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-ride="">
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active" style="background-image:url(images/speaking-in-front-of-crowd.jpg);"></div>
-          <div class="carousel-item" style="background-image:url(images/slide-2.jpg);"></div>
-          <div class="carousel-item" style="background-image:url(images/slide-3.jpg);"></div>
-          <div class="carousel-item" style="background-image:url(images/slide-4.jpg);"></div>
+          <?php
+            $page_id = get_the_ID();
+            $slides = get_post_meta($page_id, 'hero_slides', true);
+            if($slides):
+              for($i = 0; $i < $slides; $i++){
+                $slide_img_id = get_post_meta($page_id, 'hero_slides_' . $i . '_slide', true);
+                $slide_img = wp_get_attachment_image_src($slide_img_id, 'full');
+                $slide_img_url = $slide_img[0];
 
+                $slide_css = get_post_meta($page_id, 'hero_slides_' . $i . '_slide_css', true);
+
+                echo '<div class="carousel-item' . ($i = 0) ? ' active' : '' . '" style="background-image:url(' . esc_url($slide_img_url) . ');' . $slide_css ? esc_html($slide_css) : '' . '"></div>';
+              }
+          ?>
           <div class="dark-overlay"></div>
           <div class="container">
             <div class="carousel-caption">
-              <h1 id="slide-title-0" class="caption-title animated slideInRight title-show">Event Planning</h1>
-              <h1 id="slide-title-1" class="caption-title animated">Slide 2</h1>
-              <h1 id="slide-title-2" class="caption-title animated">Slide 3</h1>
-              <h1 id="slide-title-3" class="caption-title animated">Slide 4</h1>
-              <p>is what we do<span>and we do it extremely well!</span></p>
+              <?php 
+                for($i = 0; $i < $slides; $i++){
+                  $slide_title = get_post_meta($page_id, 'hero_slides_' . $i . '_title', true);
+                  echo '<h1 id="slide-title-' . $i . '" class="caption-title animated' . ($i == 0) ? ' slideInRight title-show' : '' . '">' . esc_html($slide_title) . '</h1>';
+                }
+              ?>
+              <p><?php echo sprintf('%s<span>%s</span>', esc_html_x('is what we do', 'First part of subtitle', 'fedcon'), esc_html_x('and we do it extremely well!', 'second part of subtitle', 'fedcon')); ?></p>
             </div>
           </div>
+          <?php endif; ?>
         </div>
 
         <ol class="carousel-indicators">
-          <li data-target="#hero-carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#hero-carousel" data-slide-to="1"></li>
-          <li data-target="#hero-carousel" data-slide-to="2"></li>
-          <li data-target="#hero-carousel" data-slide-to="3"></li>
+          <?php 
+            for($i = 0; $i < $slides; $i++){
+              echo '<li data-target="#hero-carousel" data-slide-to="' . $i . '"' . ($i == 0) ? ' class="active"' : '' . '></li>';
+            }
+          ?>
         </ol>
       </div>
     </section>
-  <?php else: ?>
-    <section class="hero" style="background-image:url(images/back-of-audience.jpg); background-position:center center;">
+  <?php else:
+    $page_id = get_the_ID();
+    $hero_img_id = get_post_meta($page_id, 'hero_image', true);
+    $hero_img = wp_get_attachment_image_src($hero_img_id, 'full');
+    $hero_img_url = $hero_img[0];
+    $hero_img_css = get_field('hero_image_css');
+  ?>
+    <section class="hero" style="background-image:url(<?php echo esc_url($hero_img_url); ?>);<?php echo $hero_img_css ? $hero_img_css : ''; ?>">
       <div class="hero-caption d-flex justify-content-center align-items-center h-100">
-        <h1>About Us</h1>
+        <h1><?php echo get_field('hero_title') ? esc_html(get_field('hero_title')) : esc_html(get_the_title()); ?></h1>
       </div>
       <div class="dark-overlay"></div>
     </section>
