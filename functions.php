@@ -164,3 +164,7 @@ function fedcon_footer_fallback_menu(){ ?>
     </ul>
   </nav>
 <?php }
+
+function fedcon_article_section($section_name){
+  include(locate_template('includes/article-section.php', false, false));
+}
