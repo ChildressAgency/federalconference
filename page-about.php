@@ -10,7 +10,7 @@
           </div>
         </div>
       </div>
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>images/stripes-angle-bottom-left.png" class="bottom-stripes" alt="" />
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/stripes-angle-bottom-left.png" class="bottom-stripes" alt="" />
     </section>
 
     <section id="history-awards">
