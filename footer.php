@@ -1,5 +1,5 @@
 <?php 
-  if(!is_front_page() && !is_page('contact-us')){
+  if(!is_front_page() && !is_page('contact-us') && !is_page('careers')){
     get_template_part('includes/contact', 'section');
   }
 ?>
