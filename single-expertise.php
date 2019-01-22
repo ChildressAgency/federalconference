@@ -13,7 +13,9 @@
               ));
               if($expertise->have_posts()): while($expertise->have_posts()): $expertise->the_post(): ?>
                 <?php $expertise_id = get_the_ID(); ?>
-                <li class="nav-item<?php if($page_id == $expertise_id){ echo ' active'; } ?>"><a href="<?php the_permalink(); ?>" class="nav-link"><?php the_title(); ?></a></li>
+                <li class="nav-item<?php if($page_id == $expertise_id){ echo ' active'; } ?>">
+                  <a href="<?php the_permalink(); ?>" class="nav-link"><?php the_title(); ?></a>
+                </li>
             <?php endwhile; endif; wp_reset_postdata(); ?>
           </ul>
         </nav>
