@@ -124,6 +124,9 @@ img.alignleft{
   line-height:1.2em;
 }
 
+.page-section:nth-child(odd){
+  background-color:#e2e3e4;
+}
 
 #header{
   background-color:#011e4f;
@@ -719,7 +722,8 @@ img.alignleft{
   padding-bottom:40px;
 }
 
-#careers-intro{
+#careers-intro,
+#page-intro{
   background-color:#8dc63f;
   padding-top:40px;
   padding-bottom:12%;
@@ -855,6 +859,9 @@ img.alignleft{
 
 #sidebar-nav{
   padding-top:40px;
+}
+#sidebar-nav ul.nav{
+  border-right:2px solid #778288;
 }
 #sidebar-nav ul.nav>li{
   text-align:right;
