@@ -234,3 +234,41 @@ function fedcon_go_back_button(){
 
   echo '<a href="' . $previous . '" class="btn-main">Back</a>';
 }
+
+// disable gutenberg editor
+// https://www.billerickson.net/disabling-gutenberg-certain-templates/
+
+function fedcon_disable_editor($id = false){
+  if(empty($id)){ return false; }
+
+  $excluded_templates = array(
+    // templates/about.php
+  );
+
+  $excluded_ids = array(
+    get_option('page_on_front'),
+    // fedcon_get_page_id('page-slug'),
+  );
+
+  $id = intval($id);
+  $template = get_page_template_slug($id);
+
+  return in_array($id, $excluded_ids) || in_array($template, $excluded_templates);
+}
+
+function fedcon_get_page_id($page_slug){
+  $page = get_page_by_path($page_slug);
+  return $page->ID;
+}
+
+add_filter('use_block_editor_for_post_type', 'fedcon_disable_gutenberg', 10, 2);
+function fedcon_disable_gutenberg($can_edit, $post_type){
+  if(!(is_admin() && !empty($_GET['post']))){ return $can_edit; }
+
+  if(fedcon_disable_editor($_GET['post'])){
+    $can_edit = false;
+  }
+
+  return $can_edit;
+}
+// end disable gutenberg editor
