@@ -114,10 +114,17 @@
     </section>
   <?php else:
     $page_id = get_the_ID();
+
     $hero_img_id = get_post_meta($page_id, 'hero_image', true);
+    $hero_img_css = get_field('hero_image_css');
+
+    if(!$hero_img_id){
+      $hero_image_id = get_option('default_hero_image');
+      $hero_img_css = get_option('default_hero_image_css');
+    }
+
     $hero_img = wp_get_attachment_image_src($hero_img_id, 'full');
     $hero_img_url = $hero_img[0];
-    $hero_img_css = get_field('hero_image_css');
   ?>
     <section class="hero" style="background-image:url(<?php echo esc_url($hero_img_url); ?>);<?php echo $hero_img_css ? $hero_img_css : ''; ?>">
       <div class="hero-caption d-flex justify-content-center align-items-center h-100">
