@@ -75,7 +75,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'page_template',
 				'operator' => '==',
-				'value' => 'sectioned-page-template.php',
+				'value' => 'templates/sectioned-page-template.php',
 			),
 		),
 	),
