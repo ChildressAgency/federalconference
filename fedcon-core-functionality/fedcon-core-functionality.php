@@ -14,7 +14,7 @@ define('FEDCON_PLUGIN_DIR', dirname(__FILE__));
 define('FEDCON_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 /**
- * Load acf if not already
+ * Load acf if not already loaded
  */
 if(!class_exists('acf')){
   require_once FEDCON_PLUGIN_DIR . '/vendors/advanced-custom-fields-pro/acf.php';
