@@ -14,7 +14,7 @@ else{
   <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/stripes-angle-top-left-white.png" class="img-fluid top-stripes" alt="" />
   <div class="content-center mx-auto text-center">
     <h2><?php echo esc_html(get_field('contact_section_title', $page_id)); ?></h2>
-    <p><?php echo esc_html(get_field('contact_section_sub_title', $page_id)); ?></p>
+    <?php echo wp_kses_post(get_field('contact_section_content', $page_id)); ?>
     <a href="<?php echo esc_url(home_url('contact-us')); ?>" class="btn-main"><?php _e('Contact Us', 'fedcon'); ?></a>
   </div>
   <div class="light-overlay"></div>
