@@ -58,10 +58,14 @@ add_action('init', 'fedcon_create_post_types');
 add_action('acf/init', 'fedcon_acf_fields');
 function fedcon_acf_fields(){
   acf_add_option_page(array(
-
+    'page_title' => esc_html__('General Settings', 'fedcon'),
+    'menu_title' => esc_html__('General Settings', 'fedcon'),
+    'menu_slug' => 'general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
   ));
 
-  require_once FEDCON_PLUGIN_DIR . '/includes/fedcon-acf-general-fields.php';
-  require_once FEDCON_PLUGIN_DIR . '/includes/fedcon-acf-article-fields.php';
-  require_once FEDCON_PLUGIN_DIR . '/includes/fedcon-acf-home-page-fields.php';
+  require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-general-fields.php';
+  require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-article-fields.php';
+  require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-home-page-fields.php';
 }
