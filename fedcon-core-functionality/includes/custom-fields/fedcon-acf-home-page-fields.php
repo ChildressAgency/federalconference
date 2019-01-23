@@ -134,7 +134,8 @@ acf_add_local_field_group(array(
 			'layout' => 'block',
 			'prefix_label' => 0,
 			'prefix_name' => 1,
-		),
+    ),
+    /* removed, went with static img
 		array(
 			'key' => 'field_5c488ddb48f31',
 			'label' => esc_html__('First Section Image', 'fedcon'),
@@ -158,7 +159,7 @@ acf_add_local_field_group(array(
 			'max_height' => '',
 			'max_size' => '',
 			'mime_types' => '',
-		),
+		), */
 		array(
 			'key' => 'field_5c488df348f32',
 			'label' => esc_html__('Services Section Content', 'fedcon'),
