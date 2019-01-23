@@ -67,7 +67,7 @@
       <?php if(have_rows('testimonials')): ?>
         <section id="testimonials">
           <div class="container">
-            <h2 class="article-header <?php echo get_field('testimonials_section_title_color'); ?>"><?php echo esc_html(get_field('testimonials_section_title')); ?><small class="<?php echo get_field('testimonials_section'); ?>"><?php echo esc_html(get_field('testimonials_section_subtitle')); ?></small></h2>
+            <h2 class="article-header <?php echo get_field('testimonials_section_title_color'); ?>"><?php echo esc_html(get_field('testimonials_section_title')); ?><small class="<?php echo get_field('testimonials_section_subtitle_color'); ?>"><?php echo esc_html(get_field('testimonials_section_subtitle')); ?></small></h2>
             <div id="testimonial-slider" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <?php $t = 0; while(have_rows('testimonials')): the_row(); ?>
