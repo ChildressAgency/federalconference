@@ -68,4 +68,5 @@ function fedcon_acf_fields(){
   require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-general-fields.php';
   require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-article-fields.php';
   require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-home-page-fields.php';
+  require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-hero-settings.php';
 }
