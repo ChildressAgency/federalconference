@@ -71,4 +71,6 @@ function fedcon_acf_fields(){
   require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-hero-settings.php';
   require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-contact-section-settings.php';
   require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-about-page-settings.php';
+  require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-careers-page-settings.php';
+  require_once FEDCON_PLUGIN_DIR . '/includes/custom-fields/fedcon-acf-contact-page-settings.php';
 }
