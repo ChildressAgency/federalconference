@@ -8,7 +8,7 @@ acf_add_local_field_group(array(
 	'fields' => array(
 		array(
 			'key' => 'field_5c489b9339058',
-			'label' => esc_html_('Intro Section Content', 'fedcon'),
+			'label' => esc_html__('Intro Section Content', 'fedcon'),
 			'name' => 'intro_section_content',
 			'type' => 'clone',
 			'instructions' => '',

@@ -8,7 +8,7 @@ acf_add_local_field_group(array(
 	'fields' => array(
 		array(
 			'key' => 'field_5b76f4e85eeef',
-			'label' => esc_html(__'Email Address', 'fedcon'),
+			'label' => esc_html__('Email Address', 'fedcon'),
 			'name' => 'email_address',
 			'type' => 'email',
 			'instructions' => '',

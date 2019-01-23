@@ -3,9 +3,9 @@ if(!defined('ABSPATH')){ exit; }
 
 function fedcon_create_post_types(){
   $expertise_labels = array(
-    'name' => esc_html_x('Expertise', 'post type name' 'fedcon'),
-    'singular_name' => esc_html_x('Expertise', 'post type singular name', 'fedcon');
-    'menu_name' => esc_html_x('Expertise', 'post type menu name', 'fedcon');
+    'name' => esc_html_x('Expertise', 'post type name', 'fedcon'),
+    'singular_name' => esc_html_x('Expertise', 'post type singular name', 'fedcon'),
+    'menu_name' => esc_html_x('Expertise', 'post type menu name', 'fedcon'),
     'add_new_item' => esc_html__('Add New Expertise', 'fedcon'),
     'search_items' => esc_html__('Search Expertise', 'fedcon'),
     'edit_item' => esc_html__('Edit Expertise', 'fedcon'),

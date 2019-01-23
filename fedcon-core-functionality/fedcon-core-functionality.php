@@ -57,7 +57,7 @@ add_action('init', 'fedcon_create_post_types');
 
 add_action('acf/init', 'fedcon_acf_fields');
 function fedcon_acf_fields(){
-  acf_add_option_page(array(
+  acf_add_options_page(array(
     'page_title' => esc_html__('General Settings', 'fedcon'),
     'menu_title' => esc_html__('General Settings', 'fedcon'),
     'menu_slug' => 'general-settings',
