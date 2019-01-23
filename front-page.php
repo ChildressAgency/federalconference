@@ -8,13 +8,7 @@
             </div>
           </div>
         </div>
-        <?php
-          $page_id = get_the_ID();
-          $first_section_img_id = get_post_meta($page_id, 'first_section_image', true);
-          $first_section_img = wp_get_attachment_image_src($first_section_img_id, 'full');
-          $first_section_img_url = $first_section_img[0];
-        ?>
-        <img src="<?php echo esc_url($first_section_img_url); ?>" class="img-fluid" alt="" />
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/people-around-table.png" class="img-fluid" alt="" />
       </section>
 
       <section id="services">
