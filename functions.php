@@ -271,4 +271,16 @@ function fedcon_disable_gutenberg($can_edit, $post_type){
 
   return $can_edit;
 }
+
+add_action('admin_head', 'fedcon_disable_classic_editor');
+function fedcon_disable_classic_editor(){
+  $screen = get_current_screen();
+  if($screen->id !== 'page' || !isset($_GET['post'])){
+    return;
+  }
+
+  if(fedcon_disable_editor($_GET['post'])){
+    remove_post_type_support('page', 'editor');
+  }
+}
 // end disable gutenberg editor
