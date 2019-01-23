@@ -32,26 +32,27 @@ function fedcon_create_post_types(){
   );
   register_post_type('expertise', $expertise_args);
 
-  $eventtypes_labels = array(
-    'name' => esc_html_x('Event Types', 'post type name', 'fedcon'),
-    'singular_name' => esc_html_x('Event Type', 'post type singular name', 'fedcon'),
-    'menu_name' => esc_html_x('Event Types', 'post type menu name', 'fedcon'),
-    'add_new_item' => esc_html__('Add New Event Type', 'fedcon'),
-    'search_items' => esc_html__('Search Event Types', 'fedcon'),
-    'edit_item' => esc_html__('Edit Event Type', 'fedcon'),
-    'view_item' => esc_html__('View Event Type', 'fedcon'),
-    'all_items' => esc_html__('All Event Types', 'fedcon'),
-    'new_item' => esc_html__('New Event Type', 'fedcon'),
-    'not_found' => esc_html__('No Event Types Found', 'fedcon')
+  // for the Your Event stuff
+  $yourevent_labels = array(
+    'name' => esc_html_x('Your Event', 'post type name', 'fedcon'),
+    'singular_name' => esc_html_x('Your Event', 'post type singular name', 'fedcon'),
+    'menu_name' => esc_html_x('Your Event', 'post type menu name', 'fedcon'),
+    'add_new_item' => esc_html__('Add New Your Event', 'fedcon'),
+    'search_items' => esc_html__('Search Your Events', 'fedcon'),
+    'edit_item' => esc_html__('Edit Your Event', 'fedcon'),
+    'view_item' => esc_html__('View Your Event', 'fedcon'),
+    'all_items' => esc_html__('All Your Events', 'fedcon'),
+    'new_item' => esc_html__('New Your Event', 'fedcon'),
+    'not_found' => esc_html__('No Your Events Found', 'fedcon')
   );
 
-  $eventtypes_args = array(
-    'labels' => $eventtypes_labels,
+  $yourevent_args = array(
+    'labels' => $yourevent_labels,
     'capability_type' => 'post',
     'public' => true,
     'menu_position' => 6,
     'menu_icon' => 'dashicons-tickets-alt',
-    'query_var' => 'eventtypes',
+    'query_var' => 'yourevent',
     'has_archive' => false,
     'show_in_rest' => true,
     'supports' => array(
@@ -61,5 +62,5 @@ function fedcon_create_post_types(){
       'revisions'
     )
   );
-  register_post_type('eventtypes', $eventtypes_args);
+  register_post_type('yourevent', $yourevent_args);
 }
