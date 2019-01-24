@@ -124,7 +124,7 @@ img.alignleft{
   line-height:1.2em;
 }
 
-.page-section:nth-child(odd){
+.page-section:nth-child(even){
   background-color:#e2e3e4;
 }
 
@@ -260,6 +260,7 @@ img.alignleft{
   font-weight:400;
   font-style:italic;
   display:block;
+  line-height:1.2em;
 }
 #hero-carousel .carousel-indicators li{
   height:15px;
@@ -952,6 +953,13 @@ img.alignleft{
   margin-left:10px;
 }
 
+.article_excerpt{
+  margin-top:60px;
+}
+.article_excerpt .article-header{
+  margin-bottom:0;
+}
+
 
 @media (max-width:575px){
   .navbar-toggler{
@@ -975,6 +983,13 @@ img.alignleft{
   }
   .contact-info.media{
     text-align:center;
+  }
+  .caption-title,
+  #hero-carousel .carousel-caption p{
+    font-size:48px;
+  }
+  #hero-carousel .carousel-caption p>span{
+    font-size:28px;
   }
 }
 @media (max-width:767px){
