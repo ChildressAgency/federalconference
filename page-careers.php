@@ -49,7 +49,7 @@
             ?>
             <section id="openings" class="d-flex flex-column justify-content-center align-items-center text-center" style="background-image:url(<?php echo esc_url($openings_bg_img_url); ?>); <?php echo esc_html($openings_bg_img_css); ?>">
               <div class="content-center">
-                <h2><?php echo esc_html(get_field('openings_section_title'); ?></h2>
+                <h2><?php echo esc_html(get_field('openings_section_title')); ?></h2>
                 <?php echo wp_kses_post(get_field('openings_section_content')); ?>
                 <a href="<?php echo esc_url('openings_section_link'); ?>" class="btn-main"><?php esc_html_e('Jobs', 'fedcon'); ?></a>
               </div>
