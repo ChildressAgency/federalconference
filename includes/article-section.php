@@ -4,7 +4,7 @@
     <?php echo wp_kses_post(get_field($section_name . '_article')); ?>
     <?php
       $button = get_field($section_name . '_article_button');
-      if($button){
+      if($button['link']){
         $button_link = $button['link'];
         $button_link_url = $button_link['url'];
         $button_link_text = $button_link['title'];
