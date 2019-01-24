@@ -5,15 +5,15 @@
         <nav id="sidebar-nav">
           <ul class="nav flex-column">
             <?php
-              $page_id = get_the_ID();
+              $this_page_id = get_the_ID();
               $expertise = new WP_Query(array(
                 'post_type' => 'expertise',
                 'post_status' => 'publish',
                 'posts_per_page' => -1
               ));
-              if($expertise->have_posts()): while($expertise->have_posts()): $expertise->the_post(): ?>
+              if($expertise->have_posts()): while($expertise->have_posts()): $expertise->the_post(); ?>
                 <?php $expertise_id = get_the_ID(); ?>
-                <li class="nav-item<?php if($page_id == $expertise_id){ echo ' active'; } ?>">
+                <li class="nav-item<?php if($this_page_id == $expertise_id){ echo ' active'; } ?>">
                   <a href="<?php the_permalink(); ?>" class="nav-link"><?php the_title(); ?></a>
                 </li>
             <?php endwhile; endif; wp_reset_postdata(); ?>
