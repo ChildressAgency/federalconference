@@ -107,7 +107,7 @@ function fedcon_add_css_meta($link, $handle){
   return $link;
 }
 
-add_action('after_set_theme', 'fedcon_setup');
+add_action('after_setup_theme', 'fedcon_setup');
 function fedcon_setup(){
   add_theme_support('post-thumbnails');
   set_post_thumbnail_size(320, 320);
@@ -226,6 +226,25 @@ function fedcon_esc_svg($svg){
   echo wp_kses($svg, $allowed_tags);
 }
 
+function fedcon_esc_iframe($iframe){
+  $kses_defaults = wp_kses_allowed_html('post');
+
+  $iframe_args = array(
+    'iframe' => array(
+      'src' => true,
+      'height' => true,
+      'width' => true,
+      'frameborder' => true,
+      'allowfullscreen' => true,
+      'class' => true,
+      'style' => true
+    )
+  );
+
+  $allowed_tags = array_merge($kses_defaults, $iframe_args);
+  echo wp_kses($iframe, $allowed_tags);
+}
+
 function fedcon_go_back_button(){
   $previous = 'javascript:history.go(-1)';
   if(isset($_SERVER['HTTP_REFERER'])){
@@ -242,12 +261,16 @@ function fedcon_disable_editor($id = false){
   if(empty($id)){ return false; }
 
   $excluded_templates = array(
-    // templates/about.php
+    'templates/sectioned-page-template.php',
+    'templates/expertise-icon-template.php',
+    'templates/sectioned-page-template.php'
   );
 
   $excluded_ids = array(
     get_option('page_on_front'),
-    // fedcon_get_page_id('page-slug'),
+    fedcon_get_page_id('about'),
+    fedcon_get_page_id('careers'),
+    fedcon_get_page_id('contact-us')
   );
 
   $id = intval($id);
