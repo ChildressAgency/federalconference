@@ -4,7 +4,7 @@
 */
 // https://codex.wordpress.org/Creating_a_Search_Page
 
-get_header(): ?>
+get_header(); ?>
 <main id="main">
   <div class="container">
     <h2 class="article-header title-border-none fedcon-green"><?php esc_html_e('Search', 'fedcon'); ?></h2>
