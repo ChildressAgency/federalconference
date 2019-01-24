@@ -84,43 +84,49 @@
                 $slide_img_url = $slide_img[0];
 
                 $slide_css = get_post_meta($page_id, 'hero_slides_' . $i . '_slide_css', true);
-
-                echo '<div class="carousel-item' . ($i = 0) ? ' active' : '' . '" style="background-image:url(' . esc_url($slide_img_url) . ');' . $slide_css ? esc_html($slide_css) : '' . '"></div>';
-              }
-          ?>
-          <div class="dark-overlay"></div>
-          <div class="container">
-            <div class="carousel-caption">
-              <?php 
-                for($i = 0; $i < $slides; $i++){
-                  $slide_title = get_post_meta($page_id, 'hero_slides_' . $i . '_title', true);
-                  echo '<h1 id="slide-title-' . $i . '" class="caption-title animated' . ($i == 0) ? ' slideInRight title-show' : '' . '">' . esc_html($slide_title) . '</h1>';
-                }
-              ?>
-              <p><?php echo sprintf('%s<span>%s</span>', esc_html_x('is what we do', 'First part of subtitle', 'fedcon'), esc_html_x('and we do it extremely well!', 'second part of subtitle', 'fedcon')); ?></p>
-            </div>
-          </div>
+                $active = ($i == 0) ? ' active' : '';
+                echo '<div class="carousel-item' . $active . '" style="background-image:url(' . esc_url($slide_img_url) . ');' . $slide_css . '"></div>';
+              } ?>
+              <div class="dark-overlay"></div>
+              <div class="container">
+                <div class="carousel-caption">
+                  <?php 
+                    for($i = 0; $i < $slides; $i++){
+                      $slide_title = get_post_meta($page_id, 'hero_slides_' . $i . '_title', true);
+                      $initial_title = ($i == 0) ? ' slideInRight title-show' : '';
+                      echo '<h1 id="slide-title-' . $i . '" class="caption-title animated' . $initial_title . '">' . esc_html($slide_title) . '</h1>';
+                    }
+                  ?>
+                  <p><?php echo sprintf('%s<span>%s</span>', esc_html_x('is what we do', 'First part of subtitle', 'fedcon'), esc_html_x('and we do it extremely well!', 'second part of subtitle', 'fedcon')); ?></p>
+                </div>
+              </div>
           <?php endif; ?>
         </div>
 
         <ol class="carousel-indicators">
           <?php 
             for($i = 0; $i < $slides; $i++){
-              echo '<li data-target="#hero-carousel" data-slide-to="' . $i . '"' . ($i == 0) ? ' class="active"' : '' . '></li>';
+              $active = ($i == 0) ? ' class="active"' : '';
+              echo '<li data-target="#hero-carousel" data-slide-to="' . $i . '"' . $active . '></li>';
             }
           ?>
         </ol>
       </div>
     </section>
   <?php else:
-    $page_id = get_the_ID();
+    if(is_home() || is_singular('post')){
+      $page_id = fedcon_get_page_id('news-media');
+    }
+    else{
+      $page_id = get_the_ID();
+    }
 
     $hero_img_id = get_post_meta($page_id, 'hero_image', true);
-    $hero_img_css = get_field('hero_image_css');
+    $hero_img_css = get_field('hero_image_css', $page_id);
 
-    if(!$hero_img_id){
-      $hero_image_id = get_option('default_hero_image');
-      $hero_img_css = get_option('default_hero_image_css');
+    if(!$hero_img_id || $hero_img_id == ''){
+      $hero_img_id = get_option('options_default_hero_image');
+      $hero_img_css = get_option('options_default_hero_image_css');
     }
 
     $hero_img = wp_get_attachment_image_src($hero_img_id, 'full');
@@ -128,7 +134,7 @@
   ?>
     <section class="hero" style="background-image:url(<?php echo esc_url($hero_img_url); ?>);<?php echo $hero_img_css ? $hero_img_css : ''; ?>">
       <div class="hero-caption d-flex justify-content-center align-items-center h-100">
-        <h1><?php echo get_field('hero_title') ? esc_html(get_field('hero_title')) : esc_html(get_the_title()); ?></h1>
+        <h1><?php echo get_field('hero_title', $page_id) ? esc_html(get_field('hero_title', $page_id)) : esc_html(get_the_title()); ?></h1>
       </div>
       <div class="dark-overlay"></div>
     </section>
