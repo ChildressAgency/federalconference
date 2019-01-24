@@ -21,16 +21,17 @@
               <div class="row">
                 <?php 
                   $featured_services = get_field('featured_services');
-                  foreach($featured_services as $featured_service): ?>
-                    <div class="col-6">
-                      <a href="<?php echo esc_url(get_permalink($featured_service->ID)); ?>" class="service-icon">
-                        <div class="animated spin">
-                          <?php fedcon_esc_svg(get_field('service_icon', $featured_service->ID)); ?>
-                        </div>
-                        <h3><?php echo esc_html(get_the_title($featured_service->ID)); ?></h3>
-                      </a>
-                    </div>
-                <?php endforeach; ?>
+                  if($featured_services):
+                    foreach($featured_services as $featured_service): ?>
+                      <div class="col-6">
+                        <a href="<?php echo esc_url(get_permalink($featured_service->ID)); ?>" class="service-icon">
+                          <div class="animated spin">
+                            <?php fedcon_esc_svg(get_field('service_icon', $featured_service->ID)); ?>
+                          </div>
+                          <h3><?php echo esc_html(get_the_title($featured_service->ID)); ?></h3>
+                        </a>
+                      </div>
+                <?php endforeach; endif; ?>
               </div>
             </div>
           </div>
@@ -110,8 +111,8 @@
       <section id="join-us">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/stripes-angle-top-right.png" class="img-fluid top-stripes" alt="" />
         <div class="content-center mx-auto w-75 text-center">
-          <h2><?php echo esc_html(get_field('career_section_title')); ?></h2>
-          <?php echo wp_kses_post(get_field('career_section_content')); ?>
+          <h2><?php echo esc_html(get_field('careers_section_title')); ?></h2>
+          <?php echo wp_kses_post(get_field('careers_section_content')); ?>
           <a href="<?php echo esc_url(home_url('careers')); ?>" class="btn-main"><?php esc_html_e('Join Us', 'fedcon'); ?></a>
         </div>
       </section>
@@ -121,7 +122,7 @@
         if($awards): ?>
           <section id="history">
             <div class="container">
-              <h2 class="article-header"><?php echo esc_html(get_field('awards_section_title')); ?></h2>
+              <h2 class="article-header title-border-none fedcon-green"><?php echo esc_html(get_field('awards_section_title')); ?></h2>
               <ul class="list-inline text-center">
                 <?php for($a = 0; $a < $awards; $a++): ?>
                   <li class="list-inline-item">
@@ -130,14 +131,17 @@
                       $award_img = wp_get_attachment_image_src($award_img_id, 'full');
                       $award_img_url = $award_img[0];
                       $award_img_alt = get_post_meta($award_img_id, '_wp_attachment_image_alt', true);
+
+                      $award_link = get_post_meta($page_id, 'awards_' . $a . '_award_link', true);
+                      $award_title = get_post_meta($page_id, 'awards_' . $a . '_award_title', true);
                     ?>
                     <img src="<?php echo esc_url($award_img_url); ?>" class="img-fluid" alt="<?php echo esc_attr($award_img_alt); ?>" />
-                    <a href="<?php echo esc_url(get_sub_field('award_link')); ?>"><?php echo esc_html(get_sub_field('award_title')); ?></a>
-                </li>
-              <?php endwhile; ?>
-            </ul>
-          </div>
-        </section>
+                    <a href="<?php echo $award_link ? esc_url($award_link) : '#'; ?>"><?php echo esc_html($award_title); ?></a>
+                  </li>
+                <?php endfor; ?>
+              </ul>
+            </div>
+          </section>
       <?php endif; ?>
     </main>
 <?php get_footer();
