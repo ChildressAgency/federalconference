@@ -71,12 +71,13 @@
                     for($t = 0; $t < $team_members; $t++):
                       $member_name = get_post_meta($page_id, 'team_members_' . $t . '_member_name', true);
                       $member_position = get_post_meta($page_id, 'team_members_' . $t . '_member_position', true);
-                      $member_bio = get_post_meta($page_id, 'team_members_' . $t . '_member_bio', true);
+                      $member_bio = wpautop(get_post_meta($page_id, 'team_members_' . $t . '_member_bio', true));
 
                       $member_img_id = get_post_meta($page_id, 'team_members_' . $t . '_member_image', true);
                       if($member_img_id){
                         $member_img = wp_get_attachment_image_src($member_img_id, 'full');
                         $member_img_url = $member_img[0];
+                      }
                       else{
                         $member_img_url = get_stylesheet_directory_uri() . '/images/team-placeholder.jpg';
                       } ?>
