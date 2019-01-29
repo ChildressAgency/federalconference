@@ -496,6 +496,9 @@ img.alignleft{
   z-index:3;
   width:75%;
 }
+.page-section+#start{
+  margin-top:60px;
+}
 .content-center .btn-main{
   margin-top:40px;
 }
@@ -706,6 +709,7 @@ img.alignleft{
   bottom:0px;
   color:#fff;
   background-color:rgba(0,0,0,.6);
+  padding:5px;
 }
 .team-member-caption h4{
   font-size:20px;
@@ -713,9 +717,13 @@ img.alignleft{
 }
 .team-member-caption h5{
   font-size:16px;
+  margin-bottom:0;
 }
 .team-member-hover:hover{
   opacity:1;
+}
+#team-member-name.modal-title{
+  font-weight:700;
 }
 
 #main{
@@ -738,6 +746,7 @@ img.alignleft{
 #benefits{
   background-color:#e2e3e4;
   padding:25px;
+  height:100%;
 }
 
 #openings{
@@ -900,6 +909,9 @@ img.alignleft{
 #logo-contact-info a{
   color:#fff;
 }
+#logo-contact-info .contact-info ul{
+  margin-bottom:0;
+}
 #logo-contact-info .contact-info ul>li{
   position:relative;
   margin-right:1em;
@@ -952,6 +964,10 @@ img.alignleft{
 #footer-social .social>a+a{
   margin-left:10px;
 }
+#logo-contact-info img{
+  display:block;
+  float:right;
+}
 
 .article_excerpt{
   margin-top:60px;
@@ -973,7 +989,7 @@ img.alignleft{
     height:auto;
   }
   #logo-contact-info img{
-    display:block;
+    float:none;
     margin:0px auto 15px;
   }
   .content-center{

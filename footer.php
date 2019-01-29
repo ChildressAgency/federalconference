@@ -12,7 +12,7 @@
               <div class="col-sm-3">
                 <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-compact.png" class="img-fluid" alt="<?php echo esc_html(bloginfo('name')); ?> Logo" /></a>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-9 flex-column align-self-center">
                 <div class="contact-info text-center">
                   <p><?php echo get_field('street_address', 'option') ? esc_html(get_field('street_address', 'option')) . ', ' : ''; ?><?php echo esc_html(get_field('city_state_zip', 'option')); ?></p>
                   <ul class="list-inline">
