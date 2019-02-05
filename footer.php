@@ -58,10 +58,10 @@
                 <ul class="list-inline">
                   <li class="list-inline-item">&copy;<?php echo date('Y'); ?> <?php echo esc_html(bloginfo('name')); ?></li>
                   <li class="list-inline-item">
-                    <a href="<?php esc_url(home_url('privacy-policy')); ?>"><?php esc_html_e('Privacy Policy', 'fedcon'); ?></a>
+                    <a href="<?php echo esc_url(home_url('privacy-policy')); ?>"><?php esc_html_e('Privacy Policy', 'fedcon'); ?></a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="<?php esc_url(home_url('terms-and-conditions')); ?>"><?php esc_html_e('Terms and Conditions', 'fedcon'); ?></a>
+                    <a href="<?php echo esc_url(home_url('terms-and-conditions')); ?>"><?php esc_html_e('Terms and Conditions', 'fedcon'); ?></a>
                   </li>
                   <li class="list-inline-item">Website created by <a href="https://childressagency.com">The Childress Agency</a></li>
                 </ul>
@@ -78,11 +78,11 @@
                 $email = get_field('email_address', 'option');
 
                 if($facebook): ?>
-                  <a href="<?php echo esc_url($facebook); ?>" class="facebook"><i class="fab fa-facebook-square"></i><span class="sr-only">Facebook</span></a>
+                  <a href="<?php echo esc_url($facebook); ?>" class="facebook" target="_blank"><i class="fab fa-facebook-square"></i><span class="sr-only">Facebook</span></a>
               <?php endif; if($twitter): ?>
-                <a href="<?php echo esc_url($twitter); ?>" class="twitter"><i class="fab fa-twitter-square"></i><span class="sr-only">Twitter</span></a>
+                <a href="<?php echo esc_url($twitter); ?>" class="twitter" target="_blank"><i class="fab fa-twitter-square"></i><span class="sr-only">Twitter</span></a>
               <?php endif; if($linkedin): ?>
-                <a href="<?php echo esc_url($linkedin); ?>" class="linkedin"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
+                <a href="<?php echo esc_url($linkedin); ?>" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
               <?php endif; if($email): ?>
                 <a href="<?php echo sanitize_email($email); ?>" class="email"><i class="far fa-envelope"></i><span class="sr-only">Email</span></a>
               <?php endif; ?>

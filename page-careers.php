@@ -51,7 +51,7 @@
               <div class="content-center">
                 <h2><?php echo esc_html(get_field('openings_section_title')); ?></h2>
                 <?php echo wp_kses_post(get_field('openings_section_content')); ?>
-                <a href="<?php echo esc_url('openings_section_link'); ?>" class="btn-main"><?php esc_html_e('Jobs', 'fedcon'); ?></a>
+                <a href="<?php echo esc_url(get_field('openings_section_link')); ?>" class="btn-main" target="_blank"><?php esc_html_e('Jobs', 'fedcon'); ?></a>
               </div>
               <div class="dark-overlay"></div>
             </section>

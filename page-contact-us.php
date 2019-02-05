@@ -31,7 +31,7 @@
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/printer-icon.png" class="align-self-center mx-4" alt="" />
               <div class="media-body align-self-center">
                 <h2><?php esc_html_e('Fax Us', 'fedcon'); ?></h2>
-                <p><?php echo esc_html('fax_number', 'option'); ?></p>
+                <p><?php echo esc_html(get_field('fax_number', 'option')); ?></p>
               </div>
             </div>
           </section>
