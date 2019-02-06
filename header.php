@@ -31,11 +31,11 @@
           <span class="vertical-divider"></span>
           <div class="social">
             <?php if($facebook): ?>
-              <a href="<?php esc_url($facebook); ?>" class="facebook"><i class="fab fa-facebook-square"></i><span class="sr-only">Facebook</span></a>
+              <a href="<?php echo esc_url($facebook); ?>" class="facebook" target="_blank"><i class="fab fa-facebook-square"></i><span class="sr-only">Facebook</span></a>
             <?php endif; if($twitter): ?>
-              <a href="<?php esc_url($twitter); ?>" class="twitter"><i class="fab fa-twitter-square"></i><span class="sr-only">Twitter</span></a>
+              <a href="<?php echo esc_url($twitter); ?>" class="twitter" target="_blank"><i class="fab fa-twitter-square"></i><span class="sr-only">Twitter</span></a>
             <?php endif; if($linkedin): ?>
-              <a href="<?php esc_url($linkedin); ?>" class="linkedin"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
+              <a href="<?php echo esc_url($linkedin); ?>" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
             <?php endif; ?>
           </div>
         </div>
@@ -85,21 +85,29 @@
 
                 $slide_css = get_post_meta($page_id, 'hero_slides_' . $i . '_slide_css', true);
                 $active = ($i == 0) ? ' active' : '';
-                echo '<div class="carousel-item' . $active . '" style="background-image:url(' . esc_url($slide_img_url) . ');' . $slide_css . '"></div>';
+                echo '<div class="carousel-item' . $active . '" style="background-image:url(' . esc_url($slide_img_url) . ');' . $slide_css . '">';
+                echo '<div class="container"><div class="carousel-caption">';
+
+                $slide_title = get_post_meta($page_id, 'hero_slides_' . $i . '_title', true);
+                $initial_title = ($i == 0) ? ' slideInRight title-show' : '';
+                      echo '<h1 id="slide-title-' . $i . '" class="caption-title animated' . $initial_title . '">' . esc_html($slide_title) . '</h1>';
+                echo '<p>' . get_post_meta($page_id, 'hero_slides_' . $i . '_subtitle', true) . '</p>';
+
+                echo '</div></div><div class="dark-overlay"></div></div>';
               } ?>
-              <div class="dark-overlay"></div>
+              <!--<div class="dark-overlay"></div>
               <div class="container">
                 <div class="carousel-caption">
-                  <?php 
+                  <?php /*
                     for($i = 0; $i < $slides; $i++){
                       $slide_title = get_post_meta($page_id, 'hero_slides_' . $i . '_title', true);
                       $initial_title = ($i == 0) ? ' slideInRight title-show' : '';
                       echo '<h1 id="slide-title-' . $i . '" class="caption-title animated' . $initial_title . '">' . esc_html($slide_title) . '</h1>';
-                    }
+                    }*/
                   ?>
                   <p><?php echo sprintf('%s<span>%s</span>', esc_html_x('is what we do', 'First part of subtitle', 'fedcon'), esc_html_x('and we do it extremely well!', 'second part of subtitle', 'fedcon')); ?></p>
                 </div>
-              </div>
+              </div>-->
           <?php endif; ?>
         </div>
 
