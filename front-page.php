@@ -96,6 +96,9 @@
 
         if($recent_posts->have_posts()): ?>
           <section id="past-projects">
+            <div class="container">
+              <?php fedcon_article_section('news_media_section_intro'); ?>
+            </div>
             <div class="container-fluid">
               <div class="row justify-content-center">
                 <?php while($recent_posts->have_posts()): $recent_posts->the_post(); ?>
