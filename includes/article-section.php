@@ -16,3 +16,4 @@
     ?>
   </div>
 </article>
+<div class="clearfix"></div>
