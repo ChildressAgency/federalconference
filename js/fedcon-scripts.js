@@ -8,14 +8,18 @@ jQuery(document).ready(function($){
     var oldTitleId = '#slide-title-' + oldSlideIndex;
     var newTitleId = '#slide-title-' + newSlideIndex;
 
-    var animationEndEvent = 'webkitAnimationEnd animationend';
+    $(oldTitleId).removeClass('slideInRight').addClass('slideOutLeft');
+    $(newTitleId).removeClass('slideOutLeft').addClass('slideInRight');
 
-    $(oldTitleId).removeClass('slideInRight').addClass('slideOutLeft').one(animationEndEvent, function(){
-      $(oldTitleId).removeClass('slideOutLeft title-show');
-      $(newTitleId).addClass('slideInRight title-show').one(animationEndEvent, function(){
-        $(newTitleId).removeClass('slideInRight');
-      });
-    });
+    //var animationEndEvent = 'webkitAnimationEnd animationend';
+
+    //$(oldTitleId).removeClass('slideInRight').addClass('slideOutLeft').one(animationEndEvent, function(){
+    //  $(oldTitleId).removeClass('slideOutLeft title-show');
+    //  $(newTitleId).addClass('slideInRight title-show').one(animationEndEvent, function(){
+    //    $(newTitleId).removeClass('slideInRight');
+    //  });
+    //});
+
   });
 
   $('#testimonial-slider').on('slid.bs.carousel', function(slide){
