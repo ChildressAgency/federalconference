@@ -6,9 +6,17 @@
             <div class="col-md-6">
               <?php fedcon_article_section('first_section_content'); ?>
             </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+              <?php 
+                $first_section_img_id = get_post_meta(get_the_ID(), 'first_section_image', true);
+                $first_section_img = wp_get_attachment_image_src($first_section_img_id, 'full');
+                $first_section_img_url = $first_section_img[0];
+                $first_section_img_alt = get_post_meta($first_section_img_id, '_wp_attachment_image_alt', true);
+              ?>
+              <img src="<?php echo esc_url($first_section_img_url); ?>" class="img-fluid" alt="<?php echo esc_attr($first_section_img_alt); ?>" />
+            </div>
           </div>
         </div>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/people-around-table.png" class="img-fluid" alt="" />
       </section>
 
       <section id="services">

@@ -36,27 +36,27 @@ img.alignnone{
   display:block;
   max-width:100%;
   height:auto;
-  margin:25px auto;
+  margin:0px auto 25px;
 }
 img.aligncenter{
   display:block;
   max-width:100%;
   height:auto;
-  margin:25px auto;
+  margin:0px auto 25px;
 }
 img.alignright{
   display:block;
   max-width:100%;
   height:auto;
   float:right;
-  margin:25px 0px 25px 25px;
+  margin:0px 0px 25px 25px;
 }
 img.alignleft{
   display:block;
   max-width:100%;
   height:auto;
   float:left;
-  margin:25px 25px 25px 0px;
+  margin:0px 25px 25px 0px;
 }
 
 .btn-main{
