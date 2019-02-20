@@ -84,7 +84,7 @@
               <?php endif; if($linkedin): ?>
                 <a href="<?php echo esc_url($linkedin); ?>" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
               <?php endif; if($email): ?>
-                <a href="<?php echo sanitize_email($email); ?>" class="email"><i class="far fa-envelope"></i><span class="sr-only">Email</span></a>
+                <a href="mailto:<?php echo sanitize_email($email); ?>" class="email"><i class="far fa-envelope"></i><span class="sr-only">Email</span></a>
               <?php endif; ?>
             </div>
           </div>
