@@ -82,10 +82,10 @@
                         $member_img_url = get_stylesheet_directory_uri() . '/images/team-placeholder.jpg';
                       } ?>
 
-                    <div class="col-6 col-md-4 col-lg-3">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
                       <a href="#" class="team-member" data-toggle="modal" data-target="#team-modal" data-member_name="<?php echo esc_html($member_name); ?>" data-member_position="<?php echo esc_html($member_position); ?>" data-member_bio="<?php echo wp_kses_post($member_bio); ?>">
                         <img src="<?php echo esc_url($member_img_url); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($member_name); ?>" />
-                        <div class="team-member-caption">
+                        <div class="team-member-caption d-flex flex-column justify-content-center">
                           <h4><?php echo esc_html($member_name); ?></h4>
                           <h5><?php echo esc_html($member_position); ?></h5>
                         </div>

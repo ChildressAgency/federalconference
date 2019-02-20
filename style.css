@@ -687,10 +687,11 @@ img.alignleft{
 
 .team-member{
   display:block;
-  width:235px;
-  height:310px;
+  max-width:235px;
+  /*height:310px;*/
   position:relative;
-  margin:0px auto 25px;
+  margin:25px auto 0px;
+  overflow:hidden;
 }
 .team-member-hover{
   position:absolute;
@@ -710,6 +711,12 @@ img.alignleft{
   color:#fff;
   background-color:rgba(0,0,0,.6);
   padding:5px;
+  height:50%;
+  bottom:-100%;
+  transition:bottom .3s ease;
+}
+.team-member:hover .team-member-caption{
+  bottom:0;
 }
 .team-member-caption h4{
   font-size:20px;
