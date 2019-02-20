@@ -15,7 +15,7 @@ get_header(); ?>
         <article>
           <?php fedcon_article_section('expertise_section'); ?>
           <div class="article-body">
-            <div class="row">
+            <div class="row justify-content-center">
               <?php
                 $expertise = new WP_Query(array(
                   'post_type' => 'expertise',
@@ -23,7 +23,7 @@ get_header(); ?>
                   'posts_per_page' => -1
                 ));
                 if($expertise->have_posts()): while($expertise->have_posts()): $expertise->the_post(); ?>
-                  <div class="col-sm-6 col-md-4">
+                  <div class="col-sm-6 col-md-3">
                     <a href="<?php the_permalink(); ?>" class="service-icon">
                       <div class="animated spin">
                         <?php fedcon_esc_svg(get_field('service_icon')); ?>
