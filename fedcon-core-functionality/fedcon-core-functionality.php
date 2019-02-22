@@ -43,7 +43,8 @@ function fedcon_dont_update_plugin($r, $url){
 
   $plugins = json_decode($r['body']['plugins'], true);
   unset($plugins['plugins'][plugin_basename(__FILE__)]);
-  $r['body']['plugins'] = json_decode($plugins);
+  //$r['body']['plugins'] = json_decode($plugins);
+  $r['body']['plugins'] = $plugins;
   return $r;
 }
 
