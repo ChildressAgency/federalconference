@@ -87,8 +87,15 @@ acf_add_local_field_group(array(
 				'param' => 'page',
 				'operator' => '!=',
 				'value' => '9',
-			),
-		),
+      ),
+    ),
+    array(
+      array(
+        'param' => 'post_type',
+        'operator' => '==',
+        'value' => 'expertise',
+      ),
+    ),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
