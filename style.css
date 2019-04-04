@@ -983,6 +983,11 @@ img.alignleft{
   margin-bottom:0;
 }
 
+#menu-footer-navigation>li>a{
+  padding-left:10px;
+  padding-right:10px;
+}
+
 
 @media (max-width:575px){
   .navbar-toggler{
