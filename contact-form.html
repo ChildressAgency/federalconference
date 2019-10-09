@@ -1,17 +1,29 @@
-<div class="contact-form">
+<form>
   <div class="form-group">
     <label for="fname" class="sr-only">First Name</label>
-    [text* fname id:fname class:form-control class:input-lg placeholder "First Name*"]
+    [text* fname id:fname class:form-control class:form-control-lg placeholder "First Name"]
   </div>
   <div class="form-group">
     <label for="lname" class="sr-only">Last Name</label>
-    [text* lname id:lname class:form-control class:input-lg placeholder "Last Name*"]
+    [text lname id:lname class:form-control class:form-control-lg placeholder "Last Name"]
   </div>
   <div class="form-group">
-    <label for="your-email" class="sr-only">Email Address</label>
-    [email* your-email id:your-email class:form-control class:input-lg placeholder "Email Address*"]
+    <label for="phone" class="sr-only">Phone Number</label>
+    [tel phone id:phone class:form-control class:form-control-lg placeholder "Phone Number"]
   </div>
   <div class="form-group">
-    [submit class:btn-main "Sign me up"]
+    <label for="your-email" class="sr-only">Email</label>
+    [email* your-email id:your-email class:form-control class:form-control-lg placeholder "Email"]
   </div>
-</div>
+  <div class="form-group">
+    <label for="category" class="sr-only">Category</label>
+    [select category first_as_label id:category class:form-control class:form-control-lg "Category" "Option 1" "Option 2" "Option 3"]
+  </div>
+  <div class="form-group">
+    <label for="message" class="sr-only">Message</label>
+    [textarea message x4 id:message class:form-control class:form-control-lg placeholder "Message"]
+  </div>
+  <div class="form-group text-center mt-4">
+    [submit class:btn-main class:btn-alt "Submit"]
+  </div>
+</form>
