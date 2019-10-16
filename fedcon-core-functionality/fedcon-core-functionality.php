@@ -35,6 +35,7 @@ function fedcon_acf_settings_dir($dir){
 /**
  * Prevent plugin from updating in case of plugin with same name in repo.
  */
+/*
 add_filter('http_request_args', 'fedcon_dont_update_plugin', 5, 2);
 function fedcon_dont_update_plugin($r, $url){
   if(strpos($url, 'https://api.wordpress.org/plugins/update-check/1.1/') !== 0){
@@ -46,7 +47,7 @@ function fedcon_dont_update_plugin($r, $url){
   //$r['body']['plugins'] = json_decode($plugins);
   $r['body']['plugins'] = $plugins;
   return $r;
-}
+}*/
 
 add_action('plugins_loaded', 'fedcon_load_textdomain');
 function fedcon_load_textdomain(){
