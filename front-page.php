@@ -3,7 +3,7 @@
       <section id="solutions">
         <div class="container">
           <div class="row no-gutters">
-            <div class="col-md-6">
+            <div class="col-md-6 your_event">
               <?php fedcon_article_section('first_section_content'); ?>
             </div>
             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
