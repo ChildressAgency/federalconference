@@ -57,35 +57,39 @@
       <div class="dark-overlay"></div>
     </section>
     
-   <section id="globus">
-    <div class="container">
-      <div class="row">
-          <div class="col-lg-6">	
-              <h2 class="article-header fedcon-green" id="globus_intro"><?php echo esc_html(get_field('intro_globus')); ?></h2>   
-                <?php
-                      if( have_rows('parts_we_reach') ): ?>
-                      <ul class="globus">
-                        <?php while ( have_rows('parts_we_reach') ) : the_row(); ?>
-                          <li class="parts">
-                            <?php echo the_sub_field('part_of_globus'); ?>
-                          </li>  
-                        <?php  endwhile; ?>
-                      </ul>
-                      <?php endif; ?>
-            </div>   
-          </div>
-          <div class="row glob-img ">
-          <div class="col-lg-6">
-              <?php if( get_field('image') ): ?>
-                <img src="<?php the_field('image'); ?>" />
+    <section id="interactive_map">
+
+      <?php
+        $map_location = new WP_Query(array(
+          'post_type' => 'location',
+          'posts_per_page' => -1,
+          'post_status' => 'publish'
+        ));
+        if($map_location->have_posts()): ?>
+          <div class="location-map embed-responsive embed-responsive-1by1">
+            <?php while($map_location->have_posts()): $map_location->the_post(); ?>
+
+              <?php $location = get_field('google_map_maker_location'); ?>
+              <?php if($location): ?>
+                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+                  <h4><?php echo esc_html__('Federal Conference', 'fedcon'); ?><br /><small><?php echo esc_html(get_the_title()); ?></small></h4>
+                  <p class="map-address">
+                    <span class="d-block"><?php echo esc_html(get_field('address')); ?></span>
+                    <span><?php echo esc_html(get_field('city')) . ', ' . esc_html(get_field('state')) . ' ' . esc_html(get_field('zip')); ?></span>
+                  </p>
+                  <p class="map-phone">
+                    <?php $map_phone = get_field('location_main_phone_number'); ?>
+                    <a href="tel:<?php echo esc_attr($map_phone); ?>"><?php echo esc_html($map_phone); ?></a>
+                  </p>
+                </div>
               <?php endif; ?>
-              
-              
+
+            <?php endwhile; ?>
           </div>
-      </div>
-    </div>
-	</section>
- 
+      <?php endif; ?>
+
+    </section>
+
     <section id="team">
       <div class="container">
         <article>
