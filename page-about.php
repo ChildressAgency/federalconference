@@ -57,7 +57,7 @@
       <div class="dark-overlay"></div>
     </section>
     
-    <section id="interactive_map">
+    <section id="interactive_map" style="padding-top:0;">
 
       <?php
         $map_location = new WP_Query(array(
