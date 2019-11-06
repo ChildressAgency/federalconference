@@ -58,7 +58,7 @@ function fedcon_scripts(){
   wp_localize_script(
     'fedcon-scripts',
     'mapMarker',
-    get_stylesheet_directory_uri() . '/images/map-marker-icon.png'
+    get_stylesheet_directory_uri() . '/images/map-marker.png'
   );
 }
 
