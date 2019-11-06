@@ -6,7 +6,7 @@
             <?php fedcon_article_section('intro_section_content'); ?>
           </div>
           <div class="col-md-5 d-flex flex-column justify-content-center align-items-center">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/CoreValuesGraphic.png" class="img-fluid" alt="" />
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Corevaluesicongroup.png" class="img-fluid" alt="" />
           </div>
         </div>
       </div>
@@ -16,8 +16,30 @@
     <section id="history-awards">
       <div class="container">
         <?php fedcon_article_section('history_section_content'); ?>
-      </div>
-    </section>
+          <!-- Icons as ACF-->
+            <?php if( have_rows('missions') ): ?>
+              <ul class="missions">
+            	<?php while( have_rows('missions') ): the_row(); 
+	         	// vars
+	         	$image = get_sub_field('icon');
+         		$title = get_sub_field('title');
+         		$content = get_sub_field('content');
+	        	?>
+	              <li class="mission col-sm-4">
+			    	<?php 
+                        if( !empty( $image ) ): ?>
+                          <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="img-thumbnail" />
+                       <?php endif; ?>
+		             <h2 class="m_icon_title d-flex justify-content-center align-items-center"><?php echo $title; ?></h2>
+		            <div class="d-flex justify-content-center align-items-center">
+		             <h3 class="m_icon_title"><?php echo $content; ?></h3>
+		            </div>
+                	<?php endwhile; ?>
+            	</ul>
+
+            <?php endif; ?>
+           </div>
+     </section>
 
     <?php
       $page_id = get_the_ID();
@@ -35,74 +57,41 @@
       <div class="dark-overlay"></div>
     </section>
     
-    
-<section id="interactive_map">
-	<div class="container">
-		<div class="row">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/International_Events.png" class="img-fluid" alt="" />
-		</div>
-	</div>
-	<!--INTERACTIVE MAP 	<h2 id="map_intro"><?php echo esc_html(get_field('intro_interactive_map')); ?></h2>    
-	<div class="container">	
-    <div class="row">
-    <div class="col-lg-6">		    
-	    	<?php if(get_field('locations')): ?>
-	         <ul>
-	             <?php while(has_sub_field('locations')): ?>
-		               <li><?php the_sub_field('location_name'); ?></li>
-	             <?php endwhile; ?>
-	         </ul>
-           <?php endif; ?>
-    </div>        
-    <div class="col-lg-6">
-      <?php
-        $map_location = new WP_Query(array(
-          'post_type' => 'location',
-          'posts_per_page' => -1,
-          'post_status' => 'publish'
-        ));
-
-        if($map_location->have_posts()): ?>
-          <div class="location-map embed-responsive embed-responsive-1by1">
-            <?php while($map_location->have_posts()): $map_location->the_post(); ?>
-
-              <?php $location = get_field('google_map_marker_location'); ?>
-              <?php if($location): ?>
-                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
-                  <h4><?php echo esc_html__('Federal Conference', 'fedcon'); ?><br /><small><?php echo esc_html(get_the_title()); ?></small></h4>
-                  <p class="map-address">
-                    <span class="d-block"><?php echo esc_html(get_field('address')); ?></span>
-                    <span><?php echo esc_html(get_field('city')) . ', ' . esc_html(get_field('state')) . ' ' . esc_html(get_field('zip')); ?></span>
-                  </p>
-                  <p class="map-phone">
-                    <?php $map_phone = get_field('location_main_phone_number'); ?>
-                    <a href="tel:<?php echo esc_attr($map_phone); ?>"><?php echo esc_html($map_phone); ?></a>
-                  </p>
-                </div>
-              <?php endif; ?>
-
-            <?php endwhile; ?>
+   <section id="globus">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-6">	
+              <h2 class="article-header fedcon-green" id="globus_intro"><?php echo esc_html(get_field('intro_globus')); ?></h2>   
+                <?php
+                      if( have_rows('parts_we_reach') ): ?>
+                      <ul class="globus">
+                        <?php while ( have_rows('parts_we_reach') ) : the_row(); ?>
+                          <li class="parts">
+                            <?php echo the_sub_field('part_of_globus'); ?>
+                          </li>  
+                        <?php  endwhile; ?>
+                      </ul>
+                      <?php endif; ?>
+            </div>   
           </div>
-      <?php endif; ?>
+          <div class="row glob-img ">
+          <div class="col-lg-6">
+              <?php if( get_field('image') ): ?>
+                <img src="<?php the_field('image'); ?>" />
+              <?php endif; ?>
+              
+              
+          </div>
+      </div>
     </div>
-  </div>
-  </div>-->
-	
-</section>    
-    
-    
-    
-    
-    
-
-
-
+	</section>
+ 
     <section id="team">
       <div class="container">
         <article>
           <h2 class="article-header <?php echo esc_attr(get_post_meta($page_id, 'team_section_title_border_color', true)) . ' ' . esc_attr(get_post_meta($page_id, 'team_section_title_color', true)); ?>"><?php echo esc_html(get_post_meta($page_id, 'team_section_title', true)); ?><small class="<?php echo esc_attr(get_post_meta($page_id, 'team_section_subtitle_color', true)); ?>"><?php echo esc_html(get_post_meta($page_id, 'team_section_subtitle', true)); ?></small></h2>
-          <div class="article-body">
-            <?php echo wp_kses_post(get_post_meta($pag_id, 'team_section_article', true)); ?>
+          <div class="article-body team-content">
+            <?php echo wp_kses_post(get_post_meta($page_id, 'team_section_article', true)); ?>
           </div>
 
           <!-- Team Member Modal -->
