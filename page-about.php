@@ -71,7 +71,8 @@
 
               <?php $location = get_field('google_map_maker_location'); ?>
               <?php if($location): ?>
-                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+                <?php $marker_type = get_field('google_map_marker_type'); ?>
+                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>" data-marker_type="<?php echo esc_attr($marker_type); ?>">
                   <h4><?php echo esc_html__('Federal Conference', 'fedcon'); ?><br /><small><?php echo esc_html(get_the_title()); ?></small></h4>
                   <p class="map-address">
                     <span class="d-block"><?php echo esc_html(get_field('address')); ?></span>

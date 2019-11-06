@@ -57,8 +57,12 @@ function fedcon_scripts(){
 
   wp_localize_script(
     'fedcon-scripts',
-    'mapMarker',
-    get_stylesheet_directory_uri() . '/images/map-marker.png'
+    'mapMarkers',
+    array(
+      'star' => get_stylesheet_directory_uri() . '/images/headquarters_star.png',
+      'dot' => get_stylesheet_directory_uri() . '/images/office_dots.png',
+      'pin' => get_stylesheet_directory_uri() . '/images/otherlocationicons.png'
+    )
   );
 }
 

@@ -147,6 +147,9 @@ function add_marker($marker, map) {
   // var
   var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
 
+  var mapMarkerType = $marker.data('marker_type');
+  var mapMarker = mapMarkers[mapMarkerType];
+
   // create marker
   var marker = new google.maps.Marker({
     position: latlng,
