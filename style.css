@@ -26,10 +26,15 @@ h3{
   font-size:22px;
   font-weight:700;
 }
-
+ .m_icon_title{
+   text-align: center; 
+}
 section{
   padding-top:40px;
   padding-bottom:40px;
+}
+#openings{
+    padding-top:0;
 }
 
 img.alignnone{
@@ -126,6 +131,30 @@ img.alignleft{
 
 .page-section:nth-child(even){
   background-color:#e2e3e4;
+}
+
+.missions{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+ul.globus{
+    list-style: none;
+    color: #2e589a;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 33px;
+}
+
+
+
+li.mission{
+    list-style-type:none;
+}
+li.mission img{
+    border:none;
 }
 
 #header{
@@ -540,7 +569,7 @@ img.alignleft{
   color:#011e4f;
 }
 #testimonial-slider .carousel-item p{
-  font-size:40px;
+  font-size:25px;
   font-weight:700;
   line-height:1.2em;
 }
@@ -732,7 +761,9 @@ img.alignleft{
 #team-member-name.modal-title{
   font-weight:700;
 }
-
+.article-body.team-content{
+    font-size:20px;
+}
 #main{
   padding-top:40px;
   padding-bottom:40px;
@@ -742,14 +773,28 @@ img.alignleft{
 #page-intro{
   background-color:#8dc63f;
   padding-top:40px;
-  padding-bottom:12%;
+  padding-bottom:7%;
   position:relative;
 }
-
+.grey {
+    color: #2b2828;
+    font-size: 20px;
+    line-height: 1.2em;
+}
 #benefits-openings-eoe{
   padding-top:0;
   padding-bottom:0;
 }
+
+h2.eoe-header{
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
 #benefits{
   background-color:#e2e3e4;
   padding:25px;
@@ -768,10 +813,10 @@ img.alignleft{
   font-weight:700;
 }
 #openings p{
-  color:#fff;
-  font-size:18px;
+	color: #2b2828;
+	font-size: 20px;
+    line-height: 1.2em;
 }
-
 #eoe{
   background-color:#011e4f;
   color:#fff;
@@ -791,6 +836,30 @@ img.alignleft{
   font-size:40px;
   font-weight:700;
   color:#004e7f
+}
+h2#map_intro{
+  color: #cf2630;
+  font-family: "Arial";
+  font-size: 3.5em;
+  text-transform: uppercase;
+  padding-left: 388px;
+  font-weight: 800;
+	padding-bottom:7px;
+}
+
+#interactive_map ul{
+  	padding: 0;
+    color: #2e589a;
+    font-family: "Arial";
+    font-weight: 400;
+    line-height: 33px;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+#interactive_map li{
+	line-height:1.3em;
+	font-size:3em;
 }
 
 #contact{
@@ -1020,6 +1089,20 @@ img.alignleft{
     font-size:28px;
   }
 }
+.glob-img{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: -122px;
+    margin-right:18%;
+}
+
+#team{
+    padding-top:0;
+}
+#globus{
+    padding-bottom:0;
+}
 @media (max-width:767px){
   #solutions{
     background-position:center center;
@@ -1036,15 +1119,22 @@ img.alignleft{
     height:auto;
     padding:40px 15px 40px;
   }
+  #globus{
+        display:none;
+    }
 }
 @media (min-width:768px){
   .article-body ul{
     column-count:2;
     column-gap:40px;
   }
+   .glob-img{
+        margin-left: 15%;
+    }
 }
 @media (min-width:1200px){
   #contact-form{
     padding-bottom:15%;
   }
 }
+
